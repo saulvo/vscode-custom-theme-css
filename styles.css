@@ -87,9 +87,38 @@
   -webkit-text-fill-color: transparent;
 }
 
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.active.tab-border-top>.tab-border-top-container {
+  background-size: 400% 400%;
+  animation: gradient 5s ease alternate infinite;
   background-image: linear-gradient(to right,
       #5800E2,
-      #FF00E6);
+      #FF00E6,
+      #5800E2,
+      #FF00E6,
+      #5800E2);
   height: 3px;
+}
+
+.monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .badge .badge-content {
+  background-image: linear-gradient(45deg,
+      #5800E2,
+      #FF00E6) !important;
+}
+
+.monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .action-item.checked a::before {
+  color: #FF00E6;
 }
